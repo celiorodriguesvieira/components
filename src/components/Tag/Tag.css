@@ -1,0 +1,43 @@
+.tag {
+  display: inline-block;
+  padding: 4px 8px;
+  font-size: 12px;
+  border-radius: 999px;
+  font-weight: 500;
+  color: white;
+  text-transform: uppercase;
+}
+
+.tag-gray {
+  background-color: #888;
+}
+
+.tag-blue {
+  background-color: #3182ce;
+}
+
+.tag-green {
+  background-color: #38a169;
+}
+
+.tag-red {
+  background-color: #e53e3e;
+}
+
+.tag-rounded {
+  border-radius: 9999px;
+}
+
+.tag-outlined {
+  background-color: transparent;
+  border: 1px solid currentColor;
+  color: inherit;
+}
+
+.tag-close-button {
+  background: none;
+  border: none;
+  margin-left: 4px;
+  cursor: pointer;
+  font-size: 12px;
+}

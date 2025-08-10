@@ -1,0 +1,35 @@
+.tabs-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.tabs-header {
+  display: flex;
+  gap: 8px;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+.tab-button {
+  padding: 8px 16px;
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  font-size: 14px;
+  font-weight: 500;
+  color: #4b5563;
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.tab-button.active {
+  color: #111827;
+  border-bottom: 2px solid #2563eb;
+}
+
+.tabs-content {
+  padding-top: 8px;
+  font-size: 14px;
+  color: #374151;
+}

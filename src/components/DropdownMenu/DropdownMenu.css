@@ -1,0 +1,10 @@
+.dropdown-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.dropdown-item-icon {
+  margin-right: 4px;
+}

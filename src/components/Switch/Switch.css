@@ -1,0 +1,75 @@
+.switch-wrapper {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.switch-label {
+  font-size: 14px;
+  color: #374151;
+}
+
+.switch-track {
+  border-radius: 999px;
+  background-color: #d1d5db;
+  position: relative;
+  transition: background-color 0.2s;
+}
+
+.switch--on {
+  background-color: #10b981;
+}
+
+/*Size*/
+.switch--small {
+  width: 32px;
+  height: 18px;
+}
+
+.switch--medium {
+  width: 40px;
+  height: 22px;
+}
+
+.switch--large {
+  width: 56px;
+  height: 32px;
+}
+
+.switch-thumb {
+  position: absolute;
+  background-color: #fff;
+  border-radius: 999px;
+  top: 2px;
+  left: 2px;
+  transition: transform 0.2s;
+}
+
+/*Thumb sizes*/
+.thumb--small {
+  width: 14px;
+  height: 14px;
+}
+
+.thumb--medium {
+  width: 18px;
+  height: 18px;
+}
+
+.thumb--large {
+  width: 28px;
+  height: 28px;
+}
+
+/*Switch the thumb*/
+.switch-thumb--on.thumb--small {
+  transform: translateX(14px);
+}
+.switch-thumb--on.thumb--medium {
+  transform: translateX(18px);
+}
+
+.switch-thumb--on.thumb--large {
+  transform: translateX(24px);
+}
