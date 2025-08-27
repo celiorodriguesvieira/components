@@ -19,6 +19,7 @@ import { CalendarExamples } from "./pages/CalendarExamples";
 import { DropdownMenuExamples } from "./pages/DropdownMenuExamples";
 import { TagExamples } from "./pages/TagExamples";
 import { NotificationCenterExamples } from "./pages/NotificationCenterExamples";
+import { PaginationExamples } from "./pages/PaginationExample";
 
 function App() {
   return (
@@ -44,6 +45,7 @@ function App() {
         <Link to="/dropdown">DropdownMenu</Link>
         <Link to="/tag">Tag</Link>
         <Link to="/notification">Notification Center</Link>
+        <Link to="/pagination">Pagination</Link>
       </nav>
       <Routes>
         <Route path="/buttons" element={<ButtonExamples />} />
@@ -66,6 +68,7 @@ function App() {
         <Route path="/dropdown" element={<DropdownMenuExamples />} />
         <Route path="/tag" element={<TagExamples />} />
         <Route path="/notification" element={<NotificationCenterExamples />} />
+        <Route path="/pagination" element={<PaginationExamples />} />
       </Routes>
     </BrowserRouter>
   );
