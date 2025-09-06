@@ -1,3 +1,5 @@
+import "./Pagination.css";
+
 function range(start: number, end: number) {
   return Array.from({ length: end - start + 1 }, (_, i) => start + i);
 }
@@ -41,7 +43,6 @@ function getPaginationRange(
   ];
 }
 
-import "./Pagination.css";
 interface PaginationProps {
   totalPages: number;
   currentPage: number;
@@ -108,9 +109,7 @@ export function Pagination({
         disabled={currentPage === totalPages || totalPages <= 1}
         onClick={() => goTo(currentPage + 1)}
         aria-label="Next page"
-      >
-        Próximo
-      </button>
+      ></button>
     </div>
   );
 }
