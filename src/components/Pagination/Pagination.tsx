@@ -74,9 +74,8 @@ export function Pagination({
         onClick={() => goTo(currentPage - 1)}
         aria-label="Previous page"
       >
-        Anterior
+        Prev
       </button>
-
       {pageItems.map((item, idx) => {
         if (item === "ellipsis") {
           return (
@@ -109,7 +108,9 @@ export function Pagination({
         disabled={currentPage === totalPages || totalPages <= 1}
         onClick={() => goTo(currentPage + 1)}
         aria-label="Next page"
-      ></button>
+      >
+        Next
+      </button>
     </div>
   );
 }

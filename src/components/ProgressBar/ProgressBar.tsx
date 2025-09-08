@@ -22,7 +22,7 @@ export function ProgressBar({
 
       <div>
         <div
-          className={`progress-fill progressbar-${color}`}
+          className={`progressbar-fill progressbar-${color}`}
           style={{ width: `${percent}%` }}
         >
           <div className="progressbar-caption">{Math.round(percent)}%</div>

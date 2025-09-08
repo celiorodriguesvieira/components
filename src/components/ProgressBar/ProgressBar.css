@@ -1,35 +1,38 @@
 .progressbar {
   display: grid;
   grid-template-columns: 1fr auto;
-  grid-template-areas: "label caption" "track track";
-  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto;
+  grid-template-areas:
+    "label caption"
+    "track track";
+  gap: 6px 12px;
 }
 
 .progressbar-label {
   grid-area: label;
   font-size: 14px;
-  color: #111827;
   font-weight: 600;
 }
 
 .progressbar-caption {
+  margin-left: 5px;
   grid-area: caption;
   font-size: 12px;
-  color: #6b7280;
+  font-weight: 900;
+  color: #ffff;
   align-self: end;
 }
 
 .progressbar-track {
   grid-area: track;
   height: 10px;
-  background: #e5e7eb;
-  border-radius: 9999px;
-  overflow: hidden;
+  background: #e5e7eb; /* cinza clarinho */
+  border-radius: 9999px; /* deixa arredondado */
+  overflow: hidden; /* corta a barrinha se passar */
 }
 
 .progressbar-fill {
   height: 100%;
-  border-radius: 9999x;
+  border-radius: 9999px;
   transition: width 0.25s ease;
 }
 

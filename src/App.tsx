@@ -20,11 +20,19 @@ import { DropdownMenuExamples } from "./pages/DropdownMenuExamples";
 import { TagExamples } from "./pages/TagExamples";
 import { NotificationCenterExamples } from "./pages/NotificationCenterExamples";
 import { PaginationExamples } from "./pages/PaginationExample";
+import { ProgressBarExamples } from "./pages/ProgressBarExamples";
 
 function App() {
   return (
     <BrowserRouter>
-      <nav style={{ display: "flex", gap: 16, marginBottom: 24 }}>
+      <nav
+        style={{
+          display: "grid",
+          gap: 16,
+          gridTemplateRows: 12,
+          marginBottom: 24,
+        }}
+      >
         <Link to="buttons">Buttons</Link>
         <Link to="inputs">Inputs</Link>
         <Link to="/cards">Cards</Link>
@@ -46,6 +54,7 @@ function App() {
         <Link to="/tag">Tag</Link>
         <Link to="/notification">Notification Center</Link>
         <Link to="/pagination">Pagination</Link>
+        <Link to="/progressbar">ProgressBar</Link>
       </nav>
       <Routes>
         <Route path="/buttons" element={<ButtonExamples />} />
@@ -69,6 +78,7 @@ function App() {
         <Route path="/tag" element={<TagExamples />} />
         <Route path="/notification" element={<NotificationCenterExamples />} />
         <Route path="/pagination" element={<PaginationExamples />} />
+        <Route path="/progressbar" element={<ProgressBarExamples />} />
       </Routes>
     </BrowserRouter>
   );

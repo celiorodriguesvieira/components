@@ -16,7 +16,7 @@ export function ProgressBarExamples() {
 
       <div>
         <h3>Tasks</h3>
-        <ProgressBar label="Completed" value={18} max={30} color="green" />
+        <ProgressBar label="Completed" value={100} max={100} color="green" />
       </div>
 
       <div>
