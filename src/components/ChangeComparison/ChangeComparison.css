@@ -9,6 +9,9 @@
 .change-value {
   font-size: 16px;
   font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 4px;
 }
 
 .change-value.positive {

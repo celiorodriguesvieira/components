@@ -21,6 +21,8 @@ import { TagExamples } from "./pages/TagExamples";
 import { NotificationCenterExamples } from "./pages/NotificationCenterExamples";
 import { PaginationExamples } from "./pages/PaginationExample";
 import { ProgressBarExamples } from "./pages/ProgressBarExamples";
+import { ChangeComparisonExamples } from "./pages/ChangeComparisonExamples";
+import { FBIWantedPage } from "./pages/FBIWanted";
 
 function App() {
   return (
@@ -55,6 +57,8 @@ function App() {
         <Link to="/notification">Notification Center</Link>
         <Link to="/pagination">Pagination</Link>
         <Link to="/progressbar">ProgressBar</Link>
+        <Link to="/comparison">Comparison</Link>
+        <Link to="/fbi">FBI</Link>
       </nav>
       <Routes>
         <Route path="/buttons" element={<ButtonExamples />} />
@@ -79,6 +83,8 @@ function App() {
         <Route path="/notification" element={<NotificationCenterExamples />} />
         <Route path="/pagination" element={<PaginationExamples />} />
         <Route path="/progressbar" element={<ProgressBarExamples />} />
+        <Route path="/comparison" element={<ChangeComparisonExamples />} />
+        <Route path="/fbi" element={<FBIWantedPage />} />
       </Routes>
     </BrowserRouter>
   );

@@ -14,6 +14,9 @@ export function ChangeComparison({
   return (
     <div className="change-comparison">
       <span className={`change-value ${type}`}>
+        {type === "positive" && "↑"}
+        {type === "negative" && "↓"}
+        {type === "neutral" && "→"}
         {value > 0 ? `+${value}%` : `${value}%`}
       </span>
       {label && <span className="change-label">{label}</span>}

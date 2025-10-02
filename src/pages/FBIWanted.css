@@ -1,0 +1,95 @@
+.fbi-page {
+  background: #1c1d2a;
+  min-height: 100vh;
+  padding: 16px;
+  color: #e5e7eb;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto;
+}
+
+.fbi-title {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 24px;
+}
+
+.fbi-grid {
+  display: grid;
+  grid-template-columns: (repeat(12, 1fr));
+  gap: 16px;
+}
+
+.fbi-card {
+  grid-column: span 3;
+  background: #252535;
+  border: 1px solid #13141d;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.fbi-card-body {
+  padding: 12px;
+  display: grid;
+  gap: 8px;
+}
+
+.fbi-card-info {
+  font-size: 13px;
+  color: #9ca3af;
+}
+
+@media (max-width: 1024px) {
+  .fbi-card {
+    grid-column: span 6;
+  }
+}
+
+@media (max-width: 640px) {
+  .fbi-card {
+    grid-column: span 12;
+  }
+}
+
+/* GRID de 12 colunas (onde os cards ficam) */
+.wanted-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 16px;
+}
+
+/* CARD base (caixa escura com borda) */
+.wanted-card {
+  grid-column: span 3;
+  background-color: #252535;
+  border: 1px solid #13141d;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Conteúdo interno do card */
+.wanted-card-body {
+  padding: 12px;
+  display: grid;
+  gap: 8px;
+}
+
+.wanted-card-title {
+  font-size: 13px;
+  color: #9ca3af;
+  margin: 0;
+}
+
+@media (max-width: 1024px) {
+  .wanted-card {
+    grid-column: span 6;
+  }
+}
+
+@media (max-width) {
+  .wanted-card {
+    grid-column: span 12;
+  }
+}
