@@ -1,27 +1,27 @@
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
-import { ButtonExamples } from "./pages/ButtonExamples";
-import { InputExamples } from "./pages/InputExamples";
-import { CardExamples } from "./pages/CardExamples";
-import { BadgeExamples } from "./pages/BadgeExamples";
-import { LoaderExamples } from "./pages/LoaderExamples";
-import { ModalExamples } from "./pages/ModalExamples";
-import { AvatarExamples } from "./pages/AvatarExamples";
-import { AlertExamples } from "./pages/AlertExamples";
-import { SwitchExamples } from "./pages/SwitchExamples";
-import { TextAreaExamples } from "./pages/TextAreaExamples";
-import { SelectExamples } from "./pages/SelectExamples";
-import { TabsExamples } from "./pages/TabsExamples";
-import { ToastExamples } from "./pages/ToastExamples";
-import { AccordionExamples } from "./pages/AccordionExamples";
-import { StepperExamples } from "./pages/StepperExamples";
-import { TooltipExamples } from "./pages/TooltipExamples";
-import { CalendarExamples } from "./pages/CalendarExamples";
-import { DropdownMenuExamples } from "./pages/DropdownMenuExamples";
-import { TagExamples } from "./pages/TagExamples";
-import { NotificationCenterExamples } from "./pages/NotificationCenterExamples";
-import { PaginationExamples } from "./pages/PaginationExample";
-import { ProgressBarExamples } from "./pages/ProgressBarExamples";
-import { ChangeComparisonExamples } from "./pages/ChangeComparisonExamples";
+// import { ButtonExamples } from "./pages/ButtonExamples";
+// import { InputExamples } from "./pages/InputExamples";
+// import { CardExamples } from "./pages/CardExamples";
+// import { BadgeExamples } from "./pages/BadgeExamples";
+// import { LoaderExamples } from "./pages/LoaderExamples";
+// import { ModalExamples } from "./pages/ModalExamples";
+// import { AvatarExamples } from "./pages/AvatarExamples";
+// import { AlertExamples } from "./pages/AlertExamples";
+// import { SwitchExamples } from "./pages/SwitchExamples";
+// import { TextAreaExamples } from "./pages/TextAreaExamples";
+// import { SelectExamples } from "./pages/SelectExamples";
+// import { TabsExamples } from "./pages/TabsExamples";
+// import { ToastExamples } from "./pages/ToastExamples";
+// import { AccordionExamples } from "./pages/AccordionExamples";
+// import { StepperExamples } from "./pages/StepperExamples";
+// import { TooltipExamples } from "./pages/TooltipExamples";
+// import { CalendarExamples } from "./pages/CalendarExamples";
+// import { DropdownMenuExamples } from "./pages/DropdownMenuExamples";
+// import { TagExamples } from "./pages/TagExamples";
+// import { NotificationCenterExamples } from "./pages/NotificationCenterExamples";
+// import { PaginationExamples } from "./pages/PaginationExample";
+// import { ProgressBarExamples } from "./pages/ProgressBarExamples";
+// import { ChangeComparisonExamples } from "./pages/ChangeComparisonExamples";
 import { FBIWantedPage } from "./pages/FBIWanted";
 
 function App() {
@@ -30,12 +30,13 @@ function App() {
       <nav
         style={{
           display: "grid",
+          gridColumn: 4,
           gap: 16,
-          gridTemplateRows: 12,
           marginBottom: 24,
         }}
       >
-        <Link to="buttons">Buttons</Link>
+        {
+          /* <Link to="buttons">Buttons</Link>
         <Link to="inputs">Inputs</Link>
         <Link to="/cards">Cards</Link>
         <Link to="/badges">Badges</Link>
@@ -57,11 +58,13 @@ function App() {
         <Link to="/notification">Notification Center</Link>
         <Link to="/pagination">Pagination</Link>
         <Link to="/progressbar">ProgressBar</Link>
-        <Link to="/comparison">Comparison</Link>
-        <Link to="/fbi">FBI</Link>
+        <Link to="/comparison">Comparison</Link> */
+          <Link to="/fbi">FBI</Link>
+        }
       </nav>
       <Routes>
-        <Route path="/buttons" element={<ButtonExamples />} />
+        {
+          /* <Route path="/buttons" element={<ButtonExamples />} />
         <Route path="/inputs" element={<InputExamples />} />
         <Route path="/cards" element={<CardExamples />} />
         <Route path="/badges" element={<BadgeExamples />} />
@@ -83,8 +86,9 @@ function App() {
         <Route path="/notification" element={<NotificationCenterExamples />} />
         <Route path="/pagination" element={<PaginationExamples />} />
         <Route path="/progressbar" element={<ProgressBarExamples />} />
-        <Route path="/comparison" element={<ChangeComparisonExamples />} />
-        <Route path="/fbi" element={<FBIWantedPage />} />
+        <Route path="/comparison" element={<ChangeComparisonExamples />} /> */
+          <Route path="/fbi" element={<FBIWantedPage />} />
+        }
       </Routes>
     </BrowserRouter>
   );

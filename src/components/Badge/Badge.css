@@ -1,10 +1,13 @@
 .badge {
-  display: inline-block;
-  padding: 4px 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 10px;
+  border-radius: 9999px;
   font-size: 12px;
-  border-radius: 12px;
-  font-weight: 500;
-  color: white;
+  font-weight: 600;
+  letter-spacing: 0.25px;
+  color: #ffff;
 }
 
 .badge-info {
@@ -18,6 +21,13 @@
 .badge-warning {
   background-color: #f59e0b;
 }
+
 .badge-danger {
   background-color: #ef4444;
+}
+
+.badge:hover {
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
+  filter: brightness(1);
+  cursor: pointer;
 }

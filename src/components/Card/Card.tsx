@@ -1,13 +1,15 @@
 import "./Card.css";
 import clsx from "clsx";
 
-type CardProps = {
+export type CardProps = {
   title: string;
-  children: React.ReactNode;
-  variant?: "default" | "borderless" | "shadow";
+  subtitle?: string;
+  description?: string;
   imageSrc?: string;
   actionLabel?: string;
   onActionClick?: () => void;
+  variant?: "default" | "borderless" | "shadow";
+  children?: React.ReactNode;
 };
 
 export function Card({
@@ -17,24 +19,36 @@ export function Card({
   imageSrc,
   actionLabel,
   onActionClick,
+  subtitle,
+  description,
 }: CardProps) {
   return (
-    <>
-      <div
-        className={clsx("card", {
-          "card-borderless": variant === "borderless",
-          "card-shadow": variant === "shadow",
-        })}
-      >
-        {imageSrc && <img src={imageSrc} alt="" className="card-image"></img>}
+    <div
+      className={clsx("card", {
+        "card-borderless": variant === "borderless",
+        "card-shadow": variant === "shadow",
+      })}
+    >
+      {imageSrc && <img src={imageSrc} alt={title} className="card-image" />}
+
+      <div className="card-body">
         <h2 className="card-title">{title}</h2>
+
+        {/* Novo: subtítulo */}
+        {subtitle && <p className="card-subtitle">{subtitle}</p>}
+
+        {/* Novo: descrição */}
+        {description && <p className="card-description">{description}</p>}
+
+        {/* Children continuam valendo */}
         <div className="card-content">{children}</div>
+
         {actionLabel && onActionClick && (
           <button className="card-action-button" onClick={onActionClick}>
             {actionLabel}
           </button>
         )}
       </div>
-    </>
+    </div>
   );
 }

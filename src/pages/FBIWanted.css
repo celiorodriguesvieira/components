@@ -1,31 +1,153 @@
+body {
+  margin: 0;
+  background: #1c1d2a;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto;
+  color: #e5e7eb;
+}
+
 .fbi-page {
   background: #1c1d2a;
   min-height: 100vh;
-  padding: 16px;
-  color: #e5e7eb;
-  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
 }
 
 .fbi-title {
   font-size: 24px;
   font-weight: 700;
-  margin-bottom: 24px;
+  margin: 0;
+  color: #ffffff;
+  letter-spacing: 0.5px;
 }
 
-.fbi-grid {
-  display: grid;
-  grid-template-columns: (repeat(12, 1fr));
+.fbi-filters {
+  display: flex;
+  flex-direction: column;
   gap: 16px;
 }
 
-.fbi-card {
+.fbi-filters-row {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+}
+
+.fbi-filters-row > * {
+  flex: 1;
+}
+
+.input-text-label,
+.fbi-filter-field label {
+  font-size: 13px;
+  color: #9ca3af;
+  display: block;
+  margin-bottom: 6px;
+  line-height: 1.2;
+}
+
+/* Input e Select uniformizados */
+
+.fbi-filter-field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 12px;
+}
+
+.input-text,
+.fbi-filter-field select {
+  line-height: 40px;
+  width: 100%;
+  height: 40px;
+  padding: 0 10px;
+  border-radius: 8px;
+  border: 1px solid #333;
+  background: #252535;
+  color: #e5e7eb;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+  box-sizing: border-box;
+}
+
+/* Interação suave */
+input.text:hover,
+.fbi-filter-field select:hover {
+  background: #2d2e41;
+}
+
+input.text:focus,
+.fbi-filter-field select:focus {
+  border-color: #3b82f6;
+  background: #2a2b3d;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+}
+
+/* Dropdown escuro */
+.fbi-filter-field select option {
+  background: #1c1d2a;
+  color: #e5e7eb;
+}
+
+/* ===== 🧩 GRID DE CARDS ===== */
+.fbi-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 16px;
+}
+
+/* Cada card ocupa 3 colunas no desktop */
+.fbi-grid > * {
   grid-column: span 3;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .fbi-grid > * {
+    grid-column: span 6;
+  }
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .fbi-grid > * {
+    grid-column: span 12;
+  }
+}
+
+.fbi-card {
   background: #252535;
   border: 1px solid #13141d;
   border-radius: 12px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.fbi-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.fbi-card-image {
+  aspect-ratio: 4/3;
+  background: #2d2e41;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #6b7280;
+  font-size: 13px;
+  font-style: italic;
+}
+
+.fbi-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .fbi-card-body {
@@ -34,62 +156,43 @@
   gap: 8px;
 }
 
+.fbi-card-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
 .fbi-card-info {
   font-size: 13px;
   color: #9ca3af;
 }
 
-@media (max-width: 1024px) {
-  .fbi-card {
-    grid-column: span 6;
-  }
-}
-
-@media (max-width: 640px) {
-  .fbi-card {
-    grid-column: span 12;
-  }
-}
-
-/* GRID de 12 colunas (onde os cards ficam) */
-.wanted-grid {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  gap: 16px;
-}
-
-/* CARD base (caixa escura com borda) */
-.wanted-card {
-  grid-column: span 3;
-  background-color: #252535;
-  border: 1px solid #13141d;
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 8px;
   border-radius: 12px;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
+  font-size: 12px;
+  font-weight: 500;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-/* Conteúdo interno do card */
-.wanted-card-body {
-  padding: 12px;
-  display: grid;
-  gap: 8px;
+.badge:hover {
+  transform: scale(1.05);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
 }
 
-.wanted-card-title {
-  font-size: 13px;
-  color: #9ca3af;
-  margin: 0;
+.badge.male {
+  background: #2563eb;
+  color: #ffffff;
 }
 
-@media (max-width: 1024px) {
-  .wanted-card {
-    grid-column: span 6;
-  }
+.badge.female {
+  background: #db2777;
+  color: #ffffff;
 }
 
-@media (max-width) {
-  .wanted-card {
-    grid-column: span 12;
-  }
+.badge.neutral {
+  background: #6b7280;
+  color: #ffffff;
 }
