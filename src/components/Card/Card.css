@@ -51,3 +51,17 @@
 .card-action-button:hover {
   background-color: #2563eb;
 }
+.card-subtitle {
+  font-size: 14px;
+  font-weight: 500;
+  color: #4b5563;
+  margin-top: -8px;
+  margin-bottom: 8px;
+}
+
+.card-description {
+  font-size: 13px;
+  line-height: 1.4;
+  color: #6b7280;
+  margin-bottom: 12px;
+}

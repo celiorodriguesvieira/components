@@ -26,7 +26,7 @@ export function InputText({
 
   return (
     <>
-      <div className="input=text-wrapper">
+      <div className="input-text-wrapper">
         {label && id && (
           <label htmlFor={id} className="input-text-label">
             {label}
@@ -35,7 +35,7 @@ export function InputText({
 
         <input
           id={id}
-          className={clsx("text", { "input-text-error": hasError })}
+          className={clsx("input-text", { "input-text-error": hasError })}
           type={type}
           placeholder={placeholder}
           onChange={onChange}
