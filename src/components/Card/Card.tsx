@@ -1,46 +1,39 @@
-import "./Card.css";
 import clsx from "clsx";
+import "./Card.css";
 
-export type CardProps = {
+type CardProps = {
   title: string;
-  subtitle?: string;
-  description?: string;
+  children: React.ReactNode;
   imageSrc?: string;
   actionLabel?: string;
   onActionClick?: () => void;
-  variant?: "default" | "borderless" | "shadow";
-  children?: React.ReactNode;
+  variant?: "default" | "borderless" | "shadow" | "dark";
 };
 
 export function Card({
   title,
   children,
-  variant = "default",
   imageSrc,
   actionLabel,
   onActionClick,
-  subtitle,
-  description,
+  variant = "default",
 }: CardProps) {
   return (
     <div
       className={clsx("card", {
         "card-borderless": variant === "borderless",
         "card-shadow": variant === "shadow",
+        "card-dark": variant === "dark",
       })}
     >
-      {imageSrc && <img src={imageSrc} alt={title} className="card-image" />}
+      {imageSrc && (
+        <div className="card-image-wrapper">
+          <img src={imageSrc} alt={title} className="card-image" />
+        </div>
+      )}
 
       <div className="card-body">
         <h2 className="card-title">{title}</h2>
-
-        {/* Novo: subtítulo */}
-        {subtitle && <p className="card-subtitle">{subtitle}</p>}
-
-        {/* Novo: descrição */}
-        {description && <p className="card-description">{description}</p>}
-
-        {/* Children continuam valendo */}
         <div className="card-content">{children}</div>
 
         {actionLabel && onActionClick && (

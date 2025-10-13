@@ -22,7 +22,7 @@ import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 // import { PaginationExamples } from "./pages/PaginationExample";
 // import { ProgressBarExamples } from "./pages/ProgressBarExamples";
 // import { ChangeComparisonExamples } from "./pages/ChangeComparisonExamples";
-import { FBIWantedPage } from "./pages/FBIWanted";
+import { InterpolWantedPage } from "./pages/InterpolWanted";
 
 function App() {
   return (
@@ -59,7 +59,7 @@ function App() {
         <Link to="/pagination">Pagination</Link>
         <Link to="/progressbar">ProgressBar</Link>
         <Link to="/comparison">Comparison</Link> */
-          <Link to="/fbi">FBI</Link>
+          <Link to="/interpol">INTERPOL</Link>
         }
       </nav>
       <Routes>
@@ -87,7 +87,7 @@ function App() {
         <Route path="/pagination" element={<PaginationExamples />} />
         <Route path="/progressbar" element={<ProgressBarExamples />} />
         <Route path="/comparison" element={<ChangeComparisonExamples />} /> */
-          <Route path="/fbi" element={<FBIWantedPage />} />
+          <Route path="/fbi" element={<InterpolWantedPage />} />
         }
       </Routes>
     </BrowserRouter>
