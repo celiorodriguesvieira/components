@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import "./InterpolWanted.css";
 import { Card } from "../components/Card/Card";
-// import { Badge } from "../components/Badge/Badge";
 import { InputText } from "../components/InputText/InputText";
 import { Badge } from "../components/Badge/Badge";
 
@@ -55,11 +54,16 @@ export function InterpolWantedPage() {
         const noticesWithImages = await Promise.all(
           notices.map(async (it: any) => {
             const imageUrl = await getMainImage(it);
-            return { ...it, imageUrl };
+
+            const detailRes = await fetch(it._links?.self?.href ?? "");
+            const detailData = detailRes.ok ? await detailRes.json() : {};
+
+            return { ...it, imageUrl, sex_id: detailData.sex_id ?? null };
           })
         );
 
         // Salvando no estado
+        console.log("Interpol item example:", data?._embedded?.notices?.[0]);
         setItems(noticesWithImages);
       } catch (err: unknown) {
         if (err instanceof Error) {
@@ -112,15 +116,23 @@ export function InterpolWantedPage() {
           )}
 
           {it.sex_id && (
-            <Badge
-              label={
-                it.sex_id === "M"
-                  ? " Male"
+            <>
+              <Badge
+                variant={
+                  it.sex_id === "M"
+                    ? "male"
+                    : it.sex_id === "F"
+                    ? "female"
+                    : "neutral"
+                }
+              >
+                {it.sex_id === "M"
+                  ? "Male"
                   : it.sex_id === "F"
                   ? "Female"
-                  : "neutral"
-              }
-            />
+                  : "neutral"}{" "}
+              </Badge>
+            </>
           )}
         </Card>
       ))}

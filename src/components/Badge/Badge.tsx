@@ -2,27 +2,36 @@ import "./Badge.css";
 import clsx from "clsx";
 
 type BadgeProps = {
-  label: string;
-  variant?: "success" | "warning" | "danger" | "info";
+  children: React.ReactNode;
+  variant?:
+    | "success"
+    | "warning"
+    | "danger"
+    | "info"
+    | "male"
+    | "female"
+    | "neutral";
 };
 
-export function Badge({ label, variant }: BadgeProps) {
-  const isMale = label.toLocaleLowerCase() === "male";
-  const isFemale = label.toLocaleLowerCase() === "female";
-
+export function Badge({ children, variant = "info" }: BadgeProps) {
   return (
     <span
-      className={clsx("badge", {
-        "badge-success": variant === "success",
-        "badge-warning": variant === "warning",
-        "badge-danger": variant === "danger",
-        "badge-info": variant === "info",
-      })}
-      style={{
-        backgroundColor: isMale ? "#3B82F6" : isFemale ? "#EC4899" : undefined,
-      }}
+      className={clsx(
+        "badge",
+        {
+          "badge-success": variant === "success",
+          "badge-warning": variant === "warning",
+          "badge-danger": variant === "danger",
+          "badge-info": variant === "info",
+        },
+        {
+          "badge-male": variant === "male",
+          "badge-female": variant === "female",
+          "badge-neutral": variant === "neutral",
+        }
+      )}
     >
-      {label}
+      {children}
     </span>
   );
 }

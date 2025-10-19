@@ -87,7 +87,7 @@ function App() {
         <Route path="/pagination" element={<PaginationExamples />} />
         <Route path="/progressbar" element={<ProgressBarExamples />} />
         <Route path="/comparison" element={<ChangeComparisonExamples />} /> */
-          <Route path="/fbi" element={<InterpolWantedPage />} />
+          <Route path="/interpol" element={<InterpolWantedPage />} />
         }
       </Routes>
     </BrowserRouter>
